@@ -5,7 +5,7 @@ import { CiHeart } from "react-icons/ci";
 function Item1() {
   return (
     <div className='grid grid-cols-2'>
-      <div className='h-48'>
+      <div className='h-48 border-solid border-black'>
         <div className='h-3/5'>
         <img className='object-cover' src="https://mulltiply-prod.s3.ap-south-1.amazonaws.com/uploads/2024/01/48e9ddd2-b761-11ee-b10d-694ead45503e.webp" alt="No Image Found" />
         </div>
