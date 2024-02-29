@@ -13,7 +13,7 @@ function Item1() {
             <div className='bg-white'>
                 <h1 className=' flex flex-start mx-1'>Sandel<span className='ml-14 my-1 text-xl'><CiHeart /></span></h1>
                 <h1 className='flex flex-start mx-1'><LiaRupeeSignSolid /><span>799</span></h1>
-                <button className='bg-yellow-500 px-1 rounded-sm flex flex-start mx-1'>Add to Cart</button>
+                <button className='bg-yellow-500 px-1 rounded-sm flex flex-start mx-1 text-sm'>Add to Cart</button>
             </div>
         </div>
       </div>
