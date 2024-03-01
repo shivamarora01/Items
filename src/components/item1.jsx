@@ -91,7 +91,7 @@ function Item1() {
                </div>
                <div className='flex flex-start mx-1'>
                  <h1 className='mt-1'><LiaRupeeSignSolid /></h1>
-                 <h1 className='text-md'>799      <span className='text-sm line-through'>(1299)</span>        <span className='text-red-700 font-semibold text-sm'>38%</span></h1>
+                 <h1 className='text-md'>799 <span className='text-xs'>M.R.P:</span>      <span className='text-sm line-through'>(1299)</span>        <span className='text-red-700 font-semibold text-sm'>38%</span></h1>
                </div>
                  <button className='bg-yellow-400 px-1 rounded-sm flex flex-start mx-1 mt-1 text-sm'>Add to Cart</button>
              </div>
