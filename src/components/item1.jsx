@@ -7,7 +7,7 @@ import img2 from "../components/img2.webp"
 import img3 from "../components/img3.webp"
 
 function Item1() {
-  const images = [img3,img3,img3,img3,img1,img2]
+  const images = [img3,img3,img3,img1,img1,img1,img2,img3,img1,img2]
   const [heartIcon,setHeartIcon] = useState(images.map(() => false));
   const handleIconClick = (index) => {
     console.log(`Heart Clicked!! for ${index+1}`);
