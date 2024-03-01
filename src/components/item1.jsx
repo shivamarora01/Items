@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 
 function Item1() {
-  
+  const images = ["https://mulltiply-prod.s3.ap-south-1.amazonaws.com/uploads/2024/01/48e9ddd2-b761-11ee-b10d-694ead45503e.webp", "https://mulltiply-prod.s3.ap-south-1.amazonaws.com…2024/01/148a0ef2-b6d7-11ee-b10d-694ead45503e.webp", "https://mulltiply-prod.s3.ap-south-1.amazonaws.com…2024/02/7aa61824-c731-11ee-b10d-694ead45503e.webp", "https://mulltiply-prod.s3.ap-south-1.amazonaws.com…2024/01/fa616f22-b9ae-11ee-b10d-694ead45503e.webp"]
   const [heartIcon,setHeartIcon] = useState(false)
   const handleIconClick = () => {
     console.log("Heart Clicked!!")
@@ -68,6 +68,28 @@ function Item1() {
             </div>
         </div>
       </div>
+      {images.map((img)=>(
+         <div className='h-56 border border-solid border-neutral-600' key={img}>
+         <div className='h-3/5'>
+         <img className='object-cover h-full w-full' src={img} alt="No Image Found" />
+         </div>
+         <div className='h-2/5 my-2'>
+             <div className='bg-white'>
+               <div className='flex justify-between mx-1'>
+                 <h1 className=''>Sandel</h1>
+                     <h1 className='my-1 text-xl' onClick={handleIconClick}>
+                       {heartIcon ? <FaHeart className='text-red-500'/> : <CiHeart/>}
+                     </h1>
+               </div>
+               <div className='flex flex-start mx-1'>
+                 <h1 className='mt-1'><LiaRupeeSignSolid /></h1>
+                 <h1 className='text-md'>799      <span className='text-sm line-through'>(1299)</span>        <span className='text-red-700 font-semibold text-sm'>38%</span></h1>
+               </div>
+                 <button className='bg-yellow-400 px-1 rounded-sm flex flex-start mx-1 mt-1 text-sm'>Add to Cart</button>
+             </div>
+         </div>
+       </div>
+      ))}
     </div>
   )
 }
