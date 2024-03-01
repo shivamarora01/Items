@@ -2,17 +2,25 @@ import {React,useState} from 'react'
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { FaHeart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
+import img1 from "../components/img1.webp"
+import img2 from "../components/img2.webp"
+import img3 from "../components/img3.webp"
 
 function Item1() {
-  const images = ["https://mulltiply-prod.s3.ap-south-1.amazonaws.com/uploads/2024/01/48e9ddd2-b761-11ee-b10d-694ead45503e.webp", "https://mulltiply-prod.s3.ap-south-1.amazonaws.com…2024/01/148a0ef2-b6d7-11ee-b10d-694ead45503e.webp", "https://mulltiply-prod.s3.ap-south-1.amazonaws.com…2024/02/7aa61824-c731-11ee-b10d-694ead45503e.webp", "https://mulltiply-prod.s3.ap-south-1.amazonaws.com…2024/01/fa616f22-b9ae-11ee-b10d-694ead45503e.webp"]
-  const [heartIcon,setHeartIcon] = useState(false)
-  const handleIconClick = () => {
-    console.log("Heart Clicked!!")
-      setHeartIcon(!heartIcon)
+  const images = [img3,img3,img3,img3,img1,img2]
+  const [heartIcon,setHeartIcon] = useState(images.map(() => false));
+  const handleIconClick = (index) => {
+    console.log(`Heart Clicked!! for ${index+1}`);
+    
+    setHeartIcon((prevIcons) => {
+      const newIcons = [...prevIcons];
+      newIcons[index] = !newIcons[index];
+      return newIcons;
+    })
   }
   return (
     <div className='grid grid-cols-2'>
-       <div className='h-56 border border-solid border-neutral-600'>
+       {/* <div className='h-56 border border-solid border-neutral-600'>
         <div className='h-3/5'>
         <img className='object-cover h-full w-full' src="https://mulltiply-prod.s3.ap-south-1.amazonaws.com/uploads/2024/01/48e9ddd2-b761-11ee-b10d-694ead45503e.webp" alt="No Image Found" />
         </div>
@@ -67,8 +75,8 @@ function Item1() {
                 <button className='bg-yellow-400 px-1 rounded-sm flex flex-start mx-1 mt-1 text-sm'>Add to Cart</button>
             </div>
         </div>
-      </div>
-      {images.map((img)=>(
+      </div> */}
+      {images.map((img,index)=>(
          <div className='h-56 border border-solid border-neutral-600' key={img}>
          <div className='h-3/5'>
          <img className='object-cover h-full w-full' src={img} alt="No Image Found" />
@@ -77,8 +85,8 @@ function Item1() {
              <div className='bg-white'>
                <div className='flex justify-between mx-1'>
                  <h1 className=''>Sandel</h1>
-                     <h1 className='my-1 text-xl' onClick={handleIconClick}>
-                       {heartIcon ? <FaHeart className='text-red-500'/> : <CiHeart/>}
+                     <h1 className='my-1 text-xl' onClick={()=>handleIconClick(index)}>
+                       {heartIcon[index] ? <FaHeart className='text-red-500'/> : <CiHeart/>}
                      </h1>
                </div>
                <div className='flex flex-start mx-1'>
